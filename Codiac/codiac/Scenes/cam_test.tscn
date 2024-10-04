@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4jaos54u70nl"]
+[gd_scene load_steps=3 format=3 uid="uid://c4jaos54u70nl"]
 
 [ext_resource type="Script" path="res://Scripts/cameraControl.gd" id="1_ibwc7"]
+[ext_resource type="Script" path="res://Scripts/PlanetPopup.gd" id="2_2ticc"]
 
 [node name="world" type="Node3D"]
 
@@ -17,3 +18,14 @@ size = Vector3(1, 0.495117, 0.627625)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+
+[node name="ShowPopupButton" type="Button" parent="."]
+offset_right = 158.0
+offset_bottom = 50.0
+text = "BoTTon"
+
+[node name="PlanetPopup" type="PopupPanel" parent="."]
+size = Vector2i(200, 100)
+script = ExtResource("2_2ticc")
+
+[connection signal="pressed" from="ShowPopupButton" to="PlanetPopup" method="open_popup"]
