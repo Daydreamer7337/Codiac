@@ -1,2 +1,3 @@
 res://Scenes/cam_test.tscn
+res://Scenes/Create_buttons.gd
 res://Scripts/PlanetPopup.gd

@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4jaos54u70nl"]
+[gd_scene load_steps=4 format=3 uid="uid://c4jaos54u70nl"]
 
 [ext_resource type="Script" path="res://Scripts/cameraControl.gd" id="1_ibwc7"]
 [ext_resource type="Script" path="res://Scripts/PlanetPopup.gd" id="2_xflca"]
+
+[sub_resource type="GDScript" id="GDScript_tjdls"]
+script/source = "extends Node
+
+var planet_names = []
+# Sample array with 10 elements
+var button_container = \"Window/ScrollContainer/VBoxContainer\"
+"
 
 [node name="world" type="Node3D"]
 
@@ -27,32 +35,45 @@ offset_bottom = 57.0
 text = "BoTTon"
 
 [node name="Window" type="Window" parent="."]
-position = Vector2i(10, 0)
+position = Vector2i(10, 36)
 size = Vector2i(300, 500)
 script = ExtResource("2_xflca")
 
 [node name="LineEdit" type="LineEdit" parent="Window"]
 offset_left = 25.0
 offset_top = 10.0
-offset_right = 275.0
+offset_right = 225.0
 offset_bottom = 41.0
 
+[node name="Search_Btn" type="Button" parent="Window"]
+offset_left = 235.0
+offset_top = 10.0
+offset_right = 285.0
+offset_bottom = 41.0
+text = "Search"
+
 [node name="ScrollContainer" type="ScrollContainer" parent="Window"]
-offset_left = 25.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
 offset_top = 51.0
-offset_right = 275.0
-offset_bottom = 290.0
+offset_right = 10.0
+offset_bottom = 449.0
+grow_horizontal = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Window/ScrollContainer"]
 layout_mode = 2
+script = SubResource("GDScript_tjdls")
 
-[node name="Button" type="Button" parent="Window/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "ergvkjhje"
-
-[node name="Button2" type="Button" parent="Window/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "dtg "
+[node name="ResetBtn" type="Button" parent="Window"]
+offset_left = 120.0
+offset_top = 460.0
+offset_right = 171.0
+offset_bottom = 491.82
+text = "Reset
+"
 
 [connection signal="pressed" from="ShowPopupButton" to="Window" method="open_popup"]
 [connection signal="close_requested" from="Window" to="Window" method="close_window"]
+[connection signal="pressed" from="Window/Search_Btn" to="Window" method="_search_query_submit"]
+[connection signal="pressed" from="Window/ResetBtn" to="Window" method="_clear_list"]
