@@ -1,13 +1,13 @@
-extends PopupPanel
+extends Window
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.hide()  # Ensure the popup starts hidden
+	self.visible = false  # Ensure the popup starts hidden
 
 # Function to open the popup
 func open_popup() -> void:
-	self.popup_centered()  # Open and center the popup on the screen
+	self.visible = true  # Open and center the popup on the screen
+	self.position = Vector2i(100,100)
 
-# Function to close the popup
-func close_popup() -> void:
-	self.hide()  # Hide the popup
+func close_window() -> void:
+	self.visible = false

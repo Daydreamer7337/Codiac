@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4jaos54u70nl"]
 
 [ext_resource type="Script" path="res://Scripts/cameraControl.gd" id="1_ibwc7"]
-[ext_resource type="Script" path="res://Scripts/PlanetPopup.gd" id="2_2ticc"]
+[ext_resource type="Script" path="res://Scripts/PlanetPopup.gd" id="2_xflca"]
 
 [node name="world" type="Node3D"]
 
@@ -20,20 +20,39 @@ size = Vector3(1, 0.495117, 0.627625)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
 
 [node name="ShowPopupButton" type="Button" parent="."]
-offset_right = 158.0
-offset_bottom = 50.0
+offset_left = 29.0
+offset_top = 7.0
+offset_right = 187.0
+offset_bottom = 57.0
 text = "BoTTon"
 
-[node name="PlanetPopup" type="PopupPanel" parent="."]
+[node name="Window" type="Window" parent="."]
+position = Vector2i(10, 0)
 size = Vector2i(300, 500)
-visible = true
-script = ExtResource("2_2ticc")
+script = ExtResource("2_xflca")
 
-[node name="LineEdit" type="LineEdit" parent="PlanetPopup"]
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 71.0625
-offset_bottom = 35.0
-placeholder_text = "pl_name"
+[node name="LineEdit" type="LineEdit" parent="Window"]
+offset_left = 25.0
+offset_top = 10.0
+offset_right = 275.0
+offset_bottom = 41.0
 
-[connection signal="pressed" from="ShowPopupButton" to="PlanetPopup" method="open_popup"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Window"]
+offset_left = 25.0
+offset_top = 51.0
+offset_right = 275.0
+offset_bottom = 290.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/ScrollContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Window/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "ergvkjhje"
+
+[node name="Button2" type="Button" parent="Window/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "dtg "
+
+[connection signal="pressed" from="ShowPopupButton" to="Window" method="open_popup"]
+[connection signal="close_requested" from="Window" to="Window" method="close_window"]
