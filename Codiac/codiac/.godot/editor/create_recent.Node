@@ -1,3 +1,6 @@
+CPUParticles3D
+WorldEnvironment
+MeshInstance3D
 Button
 VBoxContainer
 ScrollContainer
@@ -10,5 +13,3 @@ GridContainer
 ItemList
 HBoxContainer
 BoxContainer
-Control
-Container

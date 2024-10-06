@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4jaos54u70nl"]
+[gd_scene load_steps=6 format=3 uid="uid://c4jaos54u70nl"]
 
 [ext_resource type="Script" path="res://Scripts/cameraControl.gd" id="1_ibwc7"]
 [ext_resource type="Script" path="res://Scripts/PlanetPopup.gd" id="2_xflca"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovib1"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.61
 
 [sub_resource type="GDScript" id="GDScript_tjdls"]
 script/source = "extends Node
@@ -10,6 +15,8 @@ var planet_names = []
 # Sample array with 10 elements
 var button_container = \"Window/ScrollContainer/VBoxContainer\"
 "
+
+[sub_resource type="PointMesh" id="PointMesh_lvmr6"]
 
 [node name="world" type="Node3D"]
 
@@ -24,9 +31,7 @@ transform = Transform3D(5.99999, 0, 0, 0, 0.236075, 0, 0, 0, 5.57056, 0, 0, 0)
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(0.910092, 0, -0.414407, 0, 1, 0, 0.414407, 0, 0.910092, 0, 0.507084, -0.577527)
 size = Vector3(1, 0.495117, 0.627625)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+material = SubResource("StandardMaterial3D_ovib1")
 
 [node name="ShowPopupButton" type="Button" parent="."]
 offset_left = 29.0
@@ -73,6 +78,13 @@ offset_right = 171.0
 offset_bottom = 491.82
 text = "Reset
 "
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+amount = 1
+lifetime = 100.0
+preprocess = 8.0
+speed_scale = 0.0
+mesh = SubResource("PointMesh_lvmr6")
 
 [connection signal="pressed" from="ShowPopupButton" to="Window" method="open_popup"]
 [connection signal="close_requested" from="Window" to="Window" method="close_window"]
