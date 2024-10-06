@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4jaos54u70nl"]
+[gd_scene load_steps=7 format=3 uid="uid://c4jaos54u70nl"]
 
 [ext_resource type="Script" path="res://Scripts/cameraControl.gd" id="1_ibwc7"]
 [ext_resource type="Script" path="res://Scripts/PlanetPopup.gd" id="2_xflca"]
+[ext_resource type="Script" path="res://Scripts/hdri_gen.gd" id="3_ir64f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovib1"]
 emission_enabled = true
@@ -85,6 +86,7 @@ lifetime = 100.0
 preprocess = 8.0
 speed_scale = 0.0
 mesh = SubResource("PointMesh_lvmr6")
+script = ExtResource("3_ir64f")
 
 [connection signal="pressed" from="ShowPopupButton" to="Window" method="open_popup"]
 [connection signal="close_requested" from="Window" to="Window" method="close_window"]

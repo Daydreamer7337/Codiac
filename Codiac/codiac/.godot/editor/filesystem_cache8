@@ -1,5 +1,5 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1728199296
+::res://::1728231162
 export_presets.cfg::TextFile::-1::1728150219::0::1::::<><>::
 icon.svg::CompressedTexture2D::95430676792867311::1727846293::1727846301::1::::<><>::
 ::res://Builds/::1728150217
@@ -29,8 +29,8 @@ GaiaSource_18.txt::TextFile::-1::1727834151::0::1::::<><>::
 GaiaSource_19.txt::TextFile::-1::1727834151::0::1::::<><>::
 GaiaSource_20.txt::TextFile::-1::1727834151::0::1::::<><>::
 ::res://Materials/::1728151315
-::res://Scenes/::1728195308
-cam_test.tscn::PackedScene::6826923226900423945::1728195308::0::1::::<><>::res://Scripts/cameraControl.gd<>res://Scripts/PlanetPopup.gd<>res://Scripts/stargen.gd
+::res://Scenes/::1728199399
+cam_test.tscn::PackedScene::6826923226900423945::1728199399::0::1::::<><>::res://Scripts/cameraControl.gd<>res://Scripts/PlanetPopup.gd
 ::res://Scripts/::1728194228
 cameraControl.gd::GDScript::-1::1728108829::0::1::::<>Camera3D<>::
 PlanetPopup.gd::GDScript::-1::1728155272::0::1::::<>Window<>::
